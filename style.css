@@ -29,28 +29,25 @@ body {
     min-height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
     color: var(--text);
-    background:
-        radial-gradient(circle at 15% 10%, rgba(217, 154, 91, 0.09), transparent 30%),
-        radial-gradient(circle at 85% 20%, rgba(240, 189, 126, 0.06), transparent 28%),
-        var(--bg);
+    background: var(--bg);
     line-height: 1.7;
     overflow-x: hidden;
+    position: relative;
 }
 
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    z-index: -1;
+    z-index: -2;
     pointer-events: none;
-    background:
-        linear-gradient(
-            120deg,
-            transparent 0%,
-            rgba(217, 154, 91, 0.025) 45%,
-            transparent 70%
-        );
-    animation: backgroundMove 12s ease-in-out infinite alternate;
+    opacity: 0.55;
+    background-image:
+        linear-gradient(rgba(56, 189, 248, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.045) 1px, transparent 1px);
+    background-size: 55px 55px;
+    mask-image: linear-gradient(to bottom, black, transparent 82%);
+    animation: gridDrift 24s linear infinite;
 }
 
 a {
@@ -67,23 +64,21 @@ header {
     width: min(92%, var(--max-width));
     margin: 0 auto;
     padding-top: 55px;
+    position: relative;
 }
 
 h1 {
     max-width: 950px;
-    margin-bottom: 28px;
+    margin-bottom: 18px;
     font-size: clamp(2.2rem, 5vw, 4.5rem);
     line-height: 1.05;
     letter-spacing: -0.045em;
-    font-weight: 700;
-    background: linear-gradient(
-        110deg,
-        var(--text),
-        var(--accent-light)
-    );
+    font-weight: 750;
+    background: linear-gradient(110deg, #ffffff 5%, var(--accent-light) 48%, var(--accent-secondary) 95%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    animation: titleReveal 1s ease both;
 }
 
 nav {
@@ -99,11 +94,11 @@ nav {
     max-width: 100%;
     margin: 0 auto 65px;
     padding: 7px;
-    background: rgba(23, 19, 16, 0.82);
-    border: 1px solid var(--border);
+    background: rgba(7, 17, 31, 0.68);
+    border: 1px solid rgba(103, 232, 249, 0.18);
     border-radius: 999px;
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(18px);
+    box-shadow: 0 14px 45px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(20px);
 }
 
 nav a {
@@ -112,15 +107,12 @@ nav a {
     color: var(--muted);
     font-size: 0.9rem;
     font-weight: 600;
-    transition:
-        color 0.25s ease,
-        background 0.25s ease,
-        transform 0.25s ease;
+    transition: color .25s ease, background .25s ease, transform .25s ease;
 }
 
 nav a:hover {
     color: var(--text);
-    background: rgba(217, 154, 91, 0.14);
+    background: rgba(56, 189, 248, 0.12);
     transform: translateY(-1px);
 }
 
@@ -132,11 +124,12 @@ section {
     width: min(92%, var(--max-width));
     margin: 0 auto 35px;
     padding: 38px;
-    background: rgba(29, 24, 20, 0.7);
-    border: 1px solid var(--border);
+    background: linear-gradient(145deg, rgba(16, 36, 58, 0.72), rgba(7, 17, 31, 0.78));
+    border: 1px solid rgba(103, 232, 249, 0.12);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    animation: sectionAppear 0.8s ease both;
+    backdrop-filter: blur(14px);
+    animation: sectionAppear .8s ease both;
 }
 
 section h3 {
@@ -185,34 +178,32 @@ p {
     justify-self: center;
     object-fit: cover;
     border-radius: 24px;
-    border: 1px solid var(--border);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-    transition:
-        transform 0.4s ease,
-        border-color 0.4s ease;
+    border: 1px solid rgba(103, 232, 249, 0.25);
+    box-shadow: 0 0 0 8px rgba(56, 189, 248, 0.025), 0 25px 70px rgba(0, 0, 0, 0.48);
+    transition: transform .45s ease, border-color .45s ease, box-shadow .45s ease;
+    animation: profileFloat 5s ease-in-out infinite;
 }
 
 .home img:hover {
-    transform: translateY(-6px);
-    border-color: rgba(217, 154, 91, 0.4);
+    transform: translateY(-8px) scale(1.015);
+    border-color: rgba(103, 232, 249, 0.55);
+    box-shadow: 0 0 35px rgba(56, 189, 248, 0.12), 0 30px 80px rgba(0, 0, 0, 0.5);
 }
 
 .work > p {
     margin-top: 15px;
     padding: 22px;
-    background: rgba(15, 13, 11, 0.65);
-    border: 1px solid var(--border);
+    background: rgba(7, 17, 31, 0.66);
+    border: 1px solid rgba(103, 232, 249, 0.1);
     border-radius: 14px;
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        border-color 0.3s ease;
+    transition: transform .3s ease, background .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
 
 .work > p:hover {
     transform: translateY(-4px);
-    background: var(--card-hover);
-    border-color: rgba(217, 154, 91, 0.3);
+    background: rgba(21, 49, 77, 0.72);
+    border-color: rgba(56, 189, 248, 0.3);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.2);
 }
 
 .work strong {
@@ -326,25 +317,31 @@ p {
     background: #58483b;
 }
 
-@keyframes backgroundMove {
-    0% {
-        transform: translate3d(-2%, -1%, 0) scale(1);
-    }
+@keyframes gridDrift {
+    from { background-position: 0 0; }
+    to { background-position: 110px 55px; }
+}
 
-    100% {
-        transform: translate3d(2%, 1%, 0) scale(1.05);
-    }
+@keyframes titleReveal {
+    from { opacity: 0; transform: translateY(16px); filter: blur(6px); }
+    to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes profileFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
 }
 
 @keyframes sectionAppear {
-    from {
-        opacity: 0;
-        transform: translateY(18px);
-    }
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
     }
 }
 
