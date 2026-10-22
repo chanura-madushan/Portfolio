@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Chanura Madushan — notes on AI, machine learning, software and automotive technology.">
-<title>Blog | Chanura Madushan</title>
+<meta name="description" content="Chanura Madushan — notes on AI, machine learning, software and automotive technology, from local LLMs to hypercars.">
+<title>Field Notes | Chanura Madushan</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="blog.css">
 </head>
@@ -20,17 +20,25 @@
 </header>
 
 <main>
-<section class="dm-intro">
-  <p class="dm-kicker">FIELD NOTES</p>
-  <h1>AI, technology<br>and the things I'm learning.</h1>
-  <p class="dm-lead">A personal collection of ideas, experiments and project notes from my journey through artificial intelligence, software and automotive technology.</p>
+<section class="dm-intro reveal">
+  <p class="dm-kicker"><span class="status-dot"></span> FIELD NOTES / 001—∞</p>
+  <h1>Curiosity, in<br><span class="gradient-text">motion.</span></h1>
+  <p class="dm-lead">Notes from the intersection of AI, software and automotive engineering. Built while learning, updated as I go.</p>
+  <div class="ascii-console" aria-label="ASCII art of a sports car">
+    <div class="console-top"><span>CHANURA@FIELD-NOTES</span><span>ASCII / 001</span></div>
+<pre class="ascii-car" aria-hidden="true">       ______
+  ____/|_||_\`.__
+ (   _    _    _ _\
+ =`-(_)--(_)--(_)-'   // FULL THROTTLE: CURIOSITY</pre>
+  </div>
 </section>
 
-<section id="featured" class="dm-feature">
+<section id="featured" class="dm-feature reveal">
   <a href="blog/moviegpt.html" class="feature-image image-purple">
     <div class="image-grid"></div>
     <span class="image-label">PROJECT / 01</span>
     <div class="feature-symbol">M<span>G</span></div>
+    <span class="floating-chip">LOCAL LLM × DATA</span>
   </a>
   <div class="feature-copy">
     <p class="dm-category">AI PROJECT · FEATURED</p>
@@ -41,33 +49,38 @@
 </section>
 
 <section id="articles" class="dm-section">
-  <div class="dm-section-head">
-    <div><p class="dm-kicker">LATEST</p><h2>From the notebook</h2></div>
-    <p>Projects, concepts and observations as I learn by building.</p>
+  <div class="dm-section-head reveal">
+    <div><p class="dm-kicker">THE READING LIST</p><h2>From the notebook</h2></div>
+    <p>Projects, concepts and machines worth understanding.</p>
   </div>
   <div class="dm-grid">
-    <a class="dm-card" href="blog/local-ai.html">
-      <div class="card-image image-blue"><span>LOCAL AI</span><div class="orb orb-one"></div><div class="orb orb-two"></div></div>
+    <a class="dm-card reveal" href="blog/local-ai.html">
+      <div class="card-image image-blue"><span>LOCAL AI</span><div class="orb orb-one"></div><div class="orb orb-two"></div><span class="visual-code">ollama.run(model)</span></div>
       <div class="card-body"><p class="dm-category">LOCAL AI</p><h3>Why I Started Running AI Models Locally</h3><p>What changed when I stopped treating AI as something that only lives behind a cloud API.</p><span class="dm-read">Read article →</span></div>
     </a>
-    <a class="dm-card" href="blog/tfidf.html">
+    <a class="dm-card reveal" href="blog/tfidf.html">
       <div class="card-image image-green"><span>MACHINE LEARNING</span><div class="tfidf-art"><i></i><i></i><i></i><i></i><i></i></div></div>
       <div class="card-body"><p class="dm-category">MACHINE LEARNING</p><h3>TF-IDF Explained: The Simple Idea Behind My Movie Recommendations</h3><p>How text becomes numbers and how those numbers can be compared to find similar titles.</p><span class="dm-read">Read article →</span></div>
     </a>
-    <a class="dm-card" href="blog/ai-cars.html">
-      <div class="card-image image-orange"><span>AUTOMOTIVE</span><div class="road-art"><b></b><b></b><b></b></div></div>
+    <a class="dm-card reveal" href="blog/ai-cars.html">
+      <div class="card-image image-orange"><span>AUTOMOTIVE TECH</span><div class="road-art"><b></b><b></b><b></b></div></div>
       <div class="card-body"><p class="dm-category">AUTOMOTIVE TECHNOLOGY</p><h3>AI Is Changing Cars — But the Car Is More Than an AI Model</h3><p>Why modern vehicles are becoming distributed computing systems on wheels.</p><span class="dm-read">Read article →</span></div>
+    </a>
+    <a class="dm-card reveal hypercar-card" href="blog/hypercars.html">
+      <div class="card-image hypercar-visual"><span>HYPERCAR CULTURE / 001</span><div class="speed-lines"></div><div class="hypercar-outline" aria-hidden="true">╱▔▔▔╲__<br>▰━◉━━━━◉━▰</div><div class="visual-spec">1,000+ HP<br><small>ENGINEERING AT THE EDGE</small></div></div>
+      <div class="card-body"><p class="dm-category">AUTOMOTIVE · DEEP DIVE</p><h3>Hypercars: When Engineering Becomes Extreme</h3><p>Hybrid powertrains, aerodynamics, lightweight materials and the machines pushing performance boundaries.</p><span class="dm-read">Read article →</span></div>
     </a>
   </div>
 </section>
 
-<section id="topics" class="dm-topics">
+<section id="topics" class="dm-topics reveal">
   <div><p class="dm-kicker">EXPLORE</p><h2>Topics I keep coming back to</h2></div>
   <div class="topic-links">
     <a href="#articles"><span>01</span> Artificial Intelligence <b>→</b></a>
     <a href="#articles"><span>02</span> Machine Learning <b>→</b></a>
     <a href="#articles"><span>03</span> Local AI <b>→</b></a>
-    <a href="#articles"><span>04</span> Automotive Technology <b>→</b></a>
+    <a href="blog/hypercars.html"><span>04</span> Hypercars & Engineering <b>→</b></a>
+    <a href="blog/ai-cars.html"><span>05</span> Automotive Technology <b>→</b></a>
   </div>
 </section>
 
@@ -77,5 +90,23 @@
   <a href="index.html" class="dm-button">Back to portfolio</a>
 </section>
 </main>
+<script>
+(() => {
+  const items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    items.forEach(item => item.classList.add('is-visible'));
+    return;
+  }
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  items.forEach(item => observer.observe(item));
+})();
+</script>
 </body>
 </html>
