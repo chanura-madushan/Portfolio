@@ -22,7 +22,13 @@
         <a href="#skills">Skills</a>
         <a href="#learning">Learning</a>
       </nav>
-      <a class="header-cta" href="#contact">Contact <span aria-hidden="true">↗</span></a>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+        </button>
+        <a class="header-cta" href="#contact">Contact <span aria-hidden="true">↗</span></a>
+      </div>
     </div>
   </header>
 
@@ -51,7 +57,7 @@
       </div>
     </section>
 
-    <section class="intro-band">
+    <section class="intro-band" id="about">
       <div class="container intro-grid">
         <p class="section-kicker">01 / PROFILE</p>
         <div>
@@ -167,5 +173,27 @@
     </section>
   </main>
   <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="#home">CM<span>.</span></a><p>Designed and built by Chanura Madushan.</p><a href="#home">Back to top ↑</a></div></footer>
+
+  <script>
+    const toggle = document.querySelector('.theme-toggle');
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    const savedTheme = localStorage.getItem('theme');
+    const preferredDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    function setTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+      localStorage.setItem('theme', theme);
+      const isDark = theme === 'dark';
+      toggle.setAttribute('aria-pressed', isDark);
+      toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      themeColor.setAttribute('content', isDark ? '#0f1720' : '#f7f8fa');
+    }
+
+    setTheme(savedTheme || (preferredDark ? 'dark' : 'light'));
+
+    toggle.addEventListener('click', () => {
+      setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+    });
+  </script>
 </body>
 </html>
